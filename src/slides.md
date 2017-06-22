@@ -806,6 +806,16 @@ Explain the analogy...
 ]
 
 ---
+
+## Developer Flexibility
+
+- Sysadmins no longer need to know how to run every variation of every framework, server, or application
+- Developers can now choose the best tool for the job/team
+  - App<sub>1</sub> could be in Java
+  - App<sub>2</sub> could be in Node
+  - App<sub>3</sub> could be in Go
+
+---
 class: middle
 background-image: url(images/patching-wall.jpg)
 background-size: 110%
