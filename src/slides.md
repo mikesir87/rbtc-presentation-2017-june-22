@@ -330,7 +330,11 @@ appendTo: .image
   2. Pull all layers for the image
   3. Validate checksums
 
-<img src="images/docker-pull.png" style="width:700px;float:right;position:relative;top:-50px;" />
+```bash
+docker pull php:7.1-apache
+```
+
+<img src="images/docker-pull.png" style="width:700px;float:right;position:relative;top:-115px;" />
 
 
 
@@ -748,6 +752,17 @@ http://lotrminecraftmod.wikia.com/wiki/File:The-one-ring.jpg
   - Provides assurances things will work everywhere
   - Makes debugging easier
 
+---
+
+## Using Docker in Builds
+
+- Standard build servers require build tools/languages to be installed
+- Imagine a build where...
+  1. A container containing build tools is started
+  2. Code is checked out into container
+  3. The build/tests run
+  4. Any necessary artifacts extracted
+  4. Container is thrown away
 
 ---
 class: middle
@@ -875,6 +890,44 @@ Going back to smartphone analogy, we have a problem in which if we need to fix t
 ]   
   ]
 ]
+
+---
+class: center middle inverse
+
+## How has Docker changed Summit/VT?
+
+---
+class: ul-mb-0
+
+## Summit QA
+
+- Fully automated builds and deployments into QA infrastructure
+
+<div class="text-center">
+  <img src="images/summit-pipeline.png" style="width:800px;" />
+</div>
+
+---
+
+## Developer Efficency
+
+- It has _dramatically_ reduced developer spin-up time
+  - Also applies to need to use loaner laptops, etc.
+- Rebuilding the environment because of issues takes seconds
+- Switching between projects is as simple as...
+  1. Stop app containers for project A
+  2. Start up containers for project B
+  3. Done
+
+---
+
+## Production Flexibilities
+
+- Haven't had any self-inflicted 
+  - Only two instances of maintenance windows, due to data migrations
+- Has provided ability to get code out faster
+  - Jan. 26 to Feb 17 (17 business days) - 8 prod deploys - abt every 2 days
+  - May 16 to May 31 (11 business days) - 7 prod deploys - abt every 1.5 days
 
 
 ---
