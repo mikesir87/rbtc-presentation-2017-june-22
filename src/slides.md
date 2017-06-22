@@ -339,7 +339,7 @@ appendTo: .image
 ## Building Images
 
 - Preferred method is to use a `Dockerfile`
-- A text file containing instructions to build an image
+  - Can be included in version control with codebase
 
 .row[
   .col-xs-6.no-pad-code[
@@ -493,9 +493,9 @@ docker container run -d -p 80:80 php:7.1-apache
 ---
 class: middle, center
 
-## Let's try an Ubuntu container!
+## Demo time! Let's run a container!
 .text-muted[
-  Live demo time!!
+  Why not Ubuntu?
 ]
 
 ???
@@ -547,9 +547,9 @@ End effect... a container is created and it looks and feels completely isolated!
 ---
 class: middle, center
 
-## More Ubuntu container demo fun!
+## Another demo please?
 .text-muted[
-  Let's see this namespace stuff
+  Sure thing! Let's look at a namespace
 ]
 
 ???
@@ -559,7 +559,7 @@ class: middle, center
   - `docker logs sleeper` - look at the PID for the bash/sleep
   - `ps aux` - notice that their different PIDs
 
-- Ok... this was all phone, but the question then is...
+- Ok... this was all fun, but the question then is...
 
 ---
 class: middle, center, inverse
@@ -635,7 +635,7 @@ class: center middle
 
 ## Docker Compose in Action!
 .text-muted[
-  Another live demo
+  Prepare to be amazed!
 ]
 
 ???
@@ -693,7 +693,7 @@ class: center middle
 
 ## Docker Swarm in Action!
 .text-muted[
-  Demo #3!
+  Live Demo #4!
 ]
 
 ???
@@ -768,73 +768,41 @@ Explain the analogy...
 
 ---
 
-## Raising Cattle
+## Leaner Hosts
 
-.row[
-  .col-xs-7.ul-mb-0[
 - Hosts only need Docker installed
   - Reduces potential attack vectors
   - Reduces number of things that need to be patched
-  ]
-  .col-xs-5.mt-m50[
+
+<br />
+
 > "Use container-specific OSes instead of general-purpose ones to reduce attack surfaces. When using a container-specific OS, attack surfaces are typically much smaller than they would be with a general-purpose OS, so there are fewer opportunities to attack and compromise a container-specific OS."
 >
 > _NIST draft Application Container Security Guide_
-  ]
-]
 
---
-appendTo: .col-xs-7
-- No host configuration means...
-  - They’re easily replaced
-  - No need to have direct access to the machine to "make tweaks"
 
---
-appendTo: .col-xs-7
+---
+
+## No Host Configuration Needed
+
+- Makes host machines easily replaceable
+- No need to have direct access to the machine to "make tweaks"
+  - Lock yourself out of production
+
+---
+
+## Easier Host Patching
+
 - Host patching now becomes...
-  - Spin up a new, patched machine
-  - Transfer workload to new machine
-  - Burn down the old machine
+  1. Spin up a new, patched machine
+  2. Transfer workload to new machine
+  3. Burn down the old machine
+- Can also deploy to new machines every time
 
-
----
-
-## Deploying an update
-
-.text-center.img-responsive[
-  ![test](images/cattle-deploy1.png)
-]
-
----
-
-## Scale up the group
-
-.text-center.img-responsive[
-  ![test](images/cattle-deploy2.png)
-]
-
----
-
-## Run apps on new instances
-
-.text-center.img-responsive[
-  ![test](images/cattle-deploy3.png)
-]
-
----
-
-## ELB sends traffic to updated app
-
-.text-center.img-responsive[
-  ![test](images/cattle-deploy4.png)
-]
-
----
-
-## Scale down group, removing old instances
-
-.text-center.img-responsive[
-  ![test](images/cattle-deploy5.png)
+.row[
+  .col-xs-12.img-responsive.text-center.full-width[
+![Deploying #1](images/cattle-deploy.png)
+  ]
 ]
 
 ---
@@ -866,14 +834,14 @@ Going back to smartphone analogy, we have a problem in which if we need to fix t
 .image-layer-wrapper.condensed[
   .image-layer[ ... ]
   .image-layer.red[ Apache 2.4 ]
-  .image-layer[ PHP 7.1 ]
+  .image-layer.red[ PHP 7.1 ]
 ]   
   ]
   .col-xs-2[
 .image-layer-wrapper.condensed[
   .image-layer[ ... ]
   .image-layer.red[ Apache 2.4 ]
-  .image-layer[ PHP 5.6 ]
+  .image-layer.red[ PHP 5.6 ]
 ]   
   ]
   .col-xs-2.mt-85[

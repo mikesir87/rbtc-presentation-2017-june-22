@@ -81,6 +81,9 @@ blockquote {
     top: -25px;
     position: relative;
 }
+.img-responsive.full-width img {
+    max-width: 100%;
+}
 
 li li {
     font-size: .8em;
