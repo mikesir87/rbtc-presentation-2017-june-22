@@ -45,6 +45,9 @@ class: middle, center, inverse
 
 ## Start with some numbers!
 
+???
+Helps to quantify the hype a little bit
+
 ---
 class: middle, center, full-size-image
 
@@ -54,6 +57,7 @@ class: middle, center, full-size-image
 - Datadog sampling of 10,000 companies in April 2017
 - Shows that many companies are at least interested
 - Some have abandoned, but that line is moving very much
+- To go from about 3% to almost a third in three years shows the adoption is real
 
 
 ---
@@ -76,7 +80,7 @@ class: middle, center, inverse
 ## What's causing all of the hype?
 
 ???
-That's a great question. So, in response to that question, another question!
+There's got to be a big problem we're running into that's needing fixing. So, while I share a crazy analogy/story, I want you to think about this question...
 
 ---
 background-image: url(images/homer.png)
@@ -90,6 +94,13 @@ class: middle, center
   ]
 ]
 
+???
+- How do developers setup their machines? How do they code?
+- How do you move your code around?
+- Where/how is it built?
+- How do you deploy to production?
+
+So... let's do something crazy to demonstrate the problem Docker is working to address...
 
 ---
 class: middle, center
@@ -99,6 +110,11 @@ class: middle, center
 <div class="text-muted">
   (What could possibly go wrong?)
 </div>
+
+???
+Beacuse why not?  Let's pretend funding isn't a problem and we can build the next, latest and greatest thing!
+
+So... here is what we want to build...
 
 ---
 class: phone-1
@@ -266,6 +282,10 @@ BOO!
 - **Ship** - share the package with all deployment environments
 - **Run** - run, scale, and monitor your application
 
+???
+Docker works to solve the problem by allowing us to package everything together.
+
+Doing so requires tools to build, ship, and run.
 
 ---
 
@@ -282,6 +302,12 @@ BOO!
     </div>
   </div>
 </div>
+
+???
+- A photograph is immutable, stateless and is a "point in time" capture (in this case, light).
+
+**Next slide notes**
+- A Docker image is also immutable and stateless, but its "point in time capture" is of filesystem state
 
 --
 appendTo: .image
@@ -319,6 +345,11 @@ appendTo: .image
   ]
 ]
 
+???
+- Emphasize the main points here...
+  - Images are a collection of layers
+  - Images contain filesystem state and metadata
+
 ---
 
 ## Retrieving Images
@@ -333,8 +364,6 @@ appendTo: .image
 ```bash
 docker pull php:7.1-apache
 ```
-
-<img src="images/docker-pull.png" style="width:700px;float:right;position:relative;top:-115px;" />
 
 
 
@@ -429,6 +458,10 @@ docker image push php-with-mysqli
   ]
 ]
 
+???
+Once we've built the image, we can now share it with others
+This then allows... (next slide)
+
 
 ---
 
@@ -461,6 +494,10 @@ docker build -t my-first-php-app .
  ]
 ]
 ]
+
+???
+- Use it as a base for other images. In this case, adding our source code.
+- By building out a collection of base layers, your entire dev team can work from the same bases
 
 ---
 
@@ -714,6 +751,9 @@ class: center middle
 - Swap between the instances and show that containers are (most likely) on different nodes
 - Open port 80 on a node that does NOT have the app running. Routing mesh in action!
 
+- Could even kill a node and watch it rebalance the service. For extra kicks, spin up a new instance first
+  - This is a great way to patch machines... deploy a new, patched version and transfer workloads.  More to come on that...
+
 ---
 class: middle, center
 
@@ -804,6 +844,10 @@ Explain the analogy...
 - No need to have direct access to the machine to "make tweaks"
   - Lock yourself out of production
 
+???
+- Mention talk about Experian locking themselves out of production
+- Mention talk in which they rotated machines every night
+
 ---
 
 ## Easier Host Patching
@@ -819,6 +863,9 @@ Explain the analogy...
 ![Deploying #1](images/cattle-deploy.png)
   ]
 ]
+
+???
+Bam! Deploy new machines every time you deploy code!
 
 ---
 
