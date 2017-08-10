@@ -962,7 +962,7 @@ class: ul-mb-0
 
 ## Production Flexibilities
 
-- Haven't had any self-inflicted 
+- Haven't had any major downtime
   - Only two instances of maintenance windows, due to data migrations
 - Has provided ability to get code out faster
   - Jan. 26 to Feb 17 (17 business days) - 8 prod deploys - abt every 2 days
