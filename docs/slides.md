@@ -20,22 +20,14 @@ class: about-me
 - August 2016 - rolled out Summit to all of VT
   - First production IT project using Docker
   - First production IT project deployed on AWS
-  ]
-  .col-xs-3.col-xs-push-1[
-    <img src="images/michael-irwin.jpg" class="img-responsive" />
-  ]
-]
 
---
-
-.row[
-  .col-xs-8[
 - Sept 2015 - Started using Docker for QA env
 - June 2016 - Attended first DockerCon
 - Sept 2016 - Started Blacksburg Docker Meetup
 - Mar 2017 - recognized as a Docker Captain
   ]
   .col-xs-3.col-xs-push-1[
+    <img src="images/michael-irwin.jpg" class="img-responsive" />
     <img src="images/docker-captain-logo.png" class="img-responsive" />
   ]
 ]
@@ -1009,14 +1001,17 @@ class: center middle
 - Join the Docker Blacksburg Meetup Group
   - Meet monthly, normally on second Wed
   - https://meetup.com/Docker-Blacksburg/
-- Come to NRV ContainerDay on July 15
+- Come to NRV ContainerDay on Sept 9
   - One-day event to get you up and running
   - Learn in the morning. Apply in the afternoon.
   - Free registration
   - https://nrvcontainerday.io/
   ]
-  .col-xs-4.img-responsive[
+  .col-xs-4.img-responsive.mt-n100[
 ![Blacksburg Meetup logo](images/bburgMeetup.png)
+
+![NRV ContainerDay](images/containerday.png)
+
   ]
 ]
 
